@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+
+  tasks:
+    - name: show run
+      ios_config:
+        backup: yes
+      register: backup_ios_location
+      when: ansible_network_os == 'ios'
+
+    - name: show path
+      debug: msg={{ backup_ios_location }}
