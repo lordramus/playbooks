@@ -6,9 +6,8 @@
     - name: show run
       ios_config:
         backup: yes
-      backup_options:
-      filename: backup.cfg
-      dir_path: /
+        backup_options:
+          dir_path: /home/awx
       
       register: backup_ios_location
       when: ansible_network_os == 'ios'
