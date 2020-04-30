@@ -6,6 +6,10 @@
     - name: show run
       ios_config:
         backup: yes
+      backup_options:
+      filename: backup.cfg
+      dir_path: /
+      
       register: backup_ios_location
       when: ansible_network_os == 'ios'
 
